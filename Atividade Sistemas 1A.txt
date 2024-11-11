@@ -1,0 +1,46 @@
+@echo off              :: Desativa a exibição dos comandos no prompt.
+cls                    :: Limpa a tela do prompt.
+:menu                  :: Define um ponto de marcação chamado "menu".
+cls                    :: Limpa a tela novamente.
+color 2                :: Define a cor do texto para verde.
+
+echo ============================    :: Exibe uma linha de separação na tela.
+echo     Programando como um raiz!!! :: Exibe a mensagem "Programando como um raiz!!!".
+echo ============================    :: Exibe uma linha de separação na tela.
+
+echo "1 - Mostre os arquivos que está na pasta" :: Mostra a opção 1 do menu.
+echo "2 - Mostre as informações do sistema onde estou" :: Mostra a opção 2 do menu.
+echo "3 - Sair"         :: Mostra a opção 3 do menu.
+
+set /p opcao= Escolha uma opcao:   :: Cria uma variável "opcao" e pede ao usuário para escolher uma opção.
+
+if %opcao% equ 1 goto opcao1       :: Se a opção escolhida for 1, vai para o ponto de marcação ":opcao1".
+if %opcao% equ 2 goto opcao2       :: Se a opção escolhida for 2, vai para o ponto de marcação ":opcao2".
+if %opcao% equ 3 goto opcao3       :: Se a opção escolhida for 3, vai para o ponto de marcação ":opcao3".
+if %opcao% GEQ 4 goto opcao4       :: Se a opção escolhida for maior ou igual a 4, vai para o ponto de marcação ":opcao4".
+
+:opcao1              :: Ponto de marcação "opcao1" para exibir os arquivos na pasta.
+cls                  :: Limpa a tela.
+dir                  :: Exibe o diretório atual, listando os arquivos na pasta.
+echo ---------------- :: Exibe uma linha de separação.
+echo "arquivos lidos" :: Exibe a mensagem "arquivos lidos".
+pause                :: Pausa a execução até que o usuário pressione uma tecla.
+goto menu            :: Retorna ao menu principal.
+
+:opcao2              :: Ponto de marcação "opcao2" para exibir informações do sistema.
+cls                  :: Limpa a tela.
+echo ---------------- :: Exibe uma linha de separação.
+echo "este é o sistema" :: Exibe a mensagem "este é o sistema".
+pause                :: Pausa a execução até que o usuário pressione uma tecla.
+goto menu            :: Retorna ao menu principal.
+
+:opcao3              :: Ponto de marcação "opcao3" para sair do programa.
+cls                  :: Limpa a tela.
+exit                 :: Encerra o script.
+
+:opcao4              :: Ponto de marcação "opcao4" para opções inválidas.
+cls                  :: Limpa a tela.
+echo ---------------- :: Exibe uma linha de separação.
+echo "Opção Inválida" :: Exibe a mensagem "Opção Inválida" caso o usuário digite uma opção incorreta.
+pause                :: Pausa a execução até que o usuário pressione uma tecla.
+goto menu            :: Retorna ao menu principal.

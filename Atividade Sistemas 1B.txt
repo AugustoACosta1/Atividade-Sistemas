@@ -1,0 +1,59 @@
+@echo off
+cls
+:menu
+cls
+color 7          :: Define a cor inicial do prompt (branco).
+
+echo =======================================
+echo            MENU DE OPÇÕES
+echo =======================================
+echo "0 - Sair"
+echo "1 - Abrir o Google Chrome no site UOL"
+echo "2 - Abrir o Bloco de Notas"
+echo "3 - Trocar a cor do prompt para amarelo"
+echo "4 - Listar todas as tarefas em execução"
+echo =======================================
+
+set /p opcao=Escolha uma opção:   :: Solicita ao usuário para escolher uma opção.
+
+if %opcao% equ 0 goto sair
+if %opcao% equ 1 goto abrir_chrome
+if %opcao% equ 2 goto abrir_notepad
+if %opcao% equ 3 goto cor_amarelo
+if %opcao% equ 4 goto listar_tarefas
+goto opcao_invalida
+
+:sair
+cls
+exit                              :: Sai do script e retorna ao prompt de comando.
+
+:abrir_chrome
+cls
+start chrome https://www.uol.com.br  :: Abre o Google Chrome no site da UOL.
+goto menu                           :: Retorna ao menu.
+
+:abrir_notepad
+cls
+start notepad                      :: Abre o Bloco de Notas.
+goto menu                           :: Retorna ao menu.
+
+:cor_amarelo
+cls
+color 6                             :: Troca a cor do prompt para amarelo.
+echo Cor alterada para amarelo.
+pause                               :: Pausa para o usuário ver a alteração.
+goto menu                           :: Retorna ao menu.
+
+:listar_tarefas
+cls
+tasklist                            :: Lista todas as tarefas em execução.
+pause                               :: Pausa para o usuário visualizar as tarefas.
+goto menu                           :: Retorna ao menu.
+
+:opcao_invalida
+cls
+echo ============================
+echo "Opção Inválida. Tente novamente."
+echo ============================
+pause                               :: Pausa para o usuário ler a mensagem.
+goto menu                           :: Retorna ao menu.

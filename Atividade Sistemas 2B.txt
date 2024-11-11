@@ -1,0 +1,38 @@
+Esse log indica um evento registrado pelo Windows relacionado ao gerenciamento de energia do sistema. Aqui está a análise detalhada do evento:
+
+Análise do Log
+Fonte: Microsoft-Windows-UserModePowerService
+
+Esse serviço está relacionado à configuração de políticas de energia do sistema, que gerenciam o consumo de energia e o desempenho do computador.
+Data: 16/11/2017 19:26:45
+
+Data e hora em que o evento foi registrado.
+ID do Evento: 12
+
+O ID 12 neste contexto indica que um processo tentou alterar ou redefinir o esquema de energia do sistema.
+Categoria da Tarefa: (10)
+
+A categoria específica do evento, embora não forneça muito contexto adicional, confirma que é um evento relacionado ao gerenciamento de energia.
+Nível: Informações
+
+Indica que é um evento informativo, e não um alerta de erro ou advertência. Eventos informativos geralmente registram ações ou configurações realizadas pelo sistema ou por algum processo.
+Descrição:
+
+"O processo C:\Program Files\AVAST Software\Avast\AvastSvc.exe (ID do processo:1152) redefiniu o esquema de política de {381b4222-f694-41f0-9685-ff5bb260df2e} para {381b4222-f694-41f0-9685-ff5bb260df2e}"
+Esse texto indica que o serviço do Avast (AvastSvc.exe) fez uma modificação no esquema de política de energia do sistema.
+O GUID {381b4222-f694-41f0-9685-ff5bb260df2e} refere-se ao esquema de energia "Equilibrado", que é um dos planos padrão do Windows. A redefinição sugere que o Avast restaurou ou confirmou o uso do plano de energia "Equilibrado", talvez como parte de sua rotina de proteção ou otimização do sistema.
+Detalhes do XML do Evento
+ProcessPath: C:\Program Files\AVAST Software\Avast\AvastSvc.exe
+
+Caminho do executável do processo responsável pela ação, que neste caso é o serviço do Avast.
+ProcessPid: 1152
+
+ID do processo do AvastSvc.exe no momento do evento.
+OldSchemeGuid e NewSchemeGuid:
+
+Ambos os GUIDs são {381B4222-F694-41F0-9685-FF5BB260DF2E}, indicando que o esquema de energia não foi alterado, mas possivelmente foi redefinido ou confirmado.
+Possível Interpretação e Contexto
+Este evento é comum em softwares de antivírus e otimização do sistema, como o Avast. Alguns desses programas monitoram ou ajustam as configurações de energia para otimizar o desempenho e, às vezes, redefinem as configurações para garantir que o sistema funcione de maneira otimizada ou para evitar problemas com economia de energia que possam interferir no software.
+
+Conclusão
+Esse log não indica um problema, mas uma ação esperada do Avast ao verificar ou redefinir o plano de energia do sistema. Este é um evento informativo e não requer ação, a menos que você perceba comportamento indesejado relacionado ao gerenciamento de energia, como mudanças frequentes e indesejadas no plano de energia.
